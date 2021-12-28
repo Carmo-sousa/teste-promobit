@@ -27,7 +27,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('products.create');
+        $tags = Tag::all();
+        return view('products.create', ['tags' => $tags]);
     }
 
     /**
@@ -40,10 +41,12 @@ class ProductController extends Controller
     {
         $request->validate([
             'name' => 'required|min:3|max:50|unique:products,name',
+            'tags' => 'required|array|min:1',
         ]);
 
-        $product = new Product;
-        $product->name = $request->name;
+        $tags = Tag::find($request->tags);
+        $product = Product::create(['name' => $request->name]);
+        $product->tags()->attach($tags);
         $product->save();
 
         return redirect()->route('products.index')->with('success', 'Produto cridado com sucesso!');
@@ -58,7 +61,8 @@ class ProductController extends Controller
     public function edit($id)
     {
         $product = Product::find($id);
-        return view('products.edit', ['product' => $product]);
+        $tags = Tag::all();
+        return view('products.edit', ['product' => $product, 'tags' => $tags]);
     }
 
     /**
@@ -71,11 +75,13 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required|min:3|max:50|unique:products,name,',
+            'name' => 'required|min:3|max:50',
+            'tags' => 'required|array|min:1',
         ]);
 
         $product = Product::find($id);
         $product->name = $request->name;
+        $product->tags()->sync($request->tags);
         $product->update();
 
         return redirect()->route('products.index')->with('success', 'Produto atualizado com sucesso');

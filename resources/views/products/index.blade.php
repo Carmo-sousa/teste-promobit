@@ -34,22 +34,22 @@
                               <div class="table-row text-lg text-left border border-gray-300 px-1">
                                 <div class="table-cell">ID</div>
                                 <div class="table-cell">Nome</div>
-                                {{-- <div class="table-cell">Tags</div> --}}
+                                <div class="table-cell">Tags</div>
                                 <div class="table-cell text-right">Ação</div>
                               </div>
                             </div>
                             <div class="table-row-group">
                                 @foreach ($products as $product)
                                 <div class="table-row">
-                                    <div class="table-cell text-left">{{ $product['id'] }}</div>
-                                    <div class="table-cell text-left">{{ $product['name'] }}</div>
-                                    {{-- <div class="table-cell text-left">
+                                    <div class="table-cell text-left">{{ $product->id }}</div>
+                                    <div class="table-cell text-left">{{ $product->name }}</div>
+                                    <div class="table-cell text-left">
                                         @foreach ($product->tags as $tag)
                                             <x-tag>
-                                                {{ $tag['name'] }}
+                                                {{ $tag->name }}
                                             </x-tag>
                                         @endforeach
-                                    </div> --}}
+                                    </div>
                                     <div class="table-cell my-2 py-3 text-right">
                                         <a href="{{ route('products.edit', $product['id']) }}" class="border rounded-md my-2 p-2 text-white bg-slate-800 hover:bg-slate-900 transition ease-in-out duration-150 mx-2">
                                             {{ __('Editar') }}

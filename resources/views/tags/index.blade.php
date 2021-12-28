@@ -31,7 +31,7 @@
                         @if ($tags->count())
                         <div class="table w-full border-collapse mx-3">
                             <div class="table-header-group">
-                              <div class="table-row text-lg text-center border border-gray-300">
+                              <div class="table-row text-lg text-left border border-gray-300">
                                 <div class="table-cell">ID</div>
                                 <div class="table-cell">Nome</div>
                                 <div class="table-cell">Ação</div>

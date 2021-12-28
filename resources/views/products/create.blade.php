@@ -22,13 +22,13 @@
                                     <div class="text-red-500 text-sm p-2 transition-opacity">{{$error}}</div>
                                 @endforeach
                             @endif
-                            {{-- <x-label for="tags" :value="__('Tags')" />
+                            <x-label for="tags" :value="__('Tags')" />
                             @foreach ($tags as $tag)
                                 <div>
                                     <input type="checkbox" name="tags[]" value="{{ $tag->id }}" class="rounded">
                                     <label for="tags" class="text-slate-700">{{ $tag->name }}</label>
                                 </div>
-                            @endforeach --}}
+                            @endforeach
                         </div>
                         <div class="my-3 flex flex-1 justify-end">
                             <x-button class="ml-3">
