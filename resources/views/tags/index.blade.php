@@ -66,6 +66,7 @@
                     </div>
                 </div>
             </div>
+            {{ $tags->links() }}
         </div>
     </div>
 </x-app-layout>
