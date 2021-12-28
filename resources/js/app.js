@@ -7,12 +7,11 @@ window.Alpine = Alpine;
 Alpine.start();
 
 function closeToast(tag) {
-    console.log(tag);
-    tag.classList.add('hidden');
+    tag.parentNode.removeChild(tag);
 }
 
 document.querySelectorAll('.toast').forEach(function(toast) {
     setTimeout(function() {
         closeToast(toast);
-    }, 5000);
+    }, 3000);
 });

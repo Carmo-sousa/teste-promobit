@@ -5453,14 +5453,13 @@ window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"];
 alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start();
 
 function closeToast(tag) {
-  console.log(tag);
-  tag.classList.add('hidden');
+  tag.parentNode.removeChild(tag);
 }
 
 document.querySelectorAll('.toast').forEach(function (toast) {
   setTimeout(function () {
     closeToast(toast);
-  }, 5000);
+  }, 3000);
 });
 
 /***/ }),
