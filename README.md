@@ -12,6 +12,7 @@ O laravel provê integração nativa para o desenvolvimento com docker. Porem po
 - [ ] Mensagens de erro para cada ação
 - [x] Paginação de produtos
 - [ ] Nível de acesso para cada usuário
+- [ ] Testes unitários
 - [x] Autenticação de usuário
 
 ## Requisitos
