@@ -9,9 +9,9 @@ services:
             dockerfile: Dockerfile
         image: laravel-app
         restart: always
-        working_dir: /var/www/
+        working_dir: /var/www/html
         volumes:
-            - ./:/var/www
+            - ./:/var/www/html
         depends_on:
             - mysql
         networks:
@@ -22,9 +22,9 @@ services:
         image: nginx:alpine
         restart: always
         ports:
-            - 8989:80
+            - 80:80
         volumes:
-            - ./:/var/www
+            - ./:/var/www/html
             - ./docker/nginx/:/etc/nginx/conf.d/
         networks:
             - app-network
