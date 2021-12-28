@@ -96,6 +96,7 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $product = Product::find($id);
+        $product->tags()->detach();
         $product->delete();
 
         return redirect()->route('products.index')->with('success', 'Produto excluído com sucesso');
