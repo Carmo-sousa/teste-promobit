@@ -49,7 +49,7 @@ O laravel provê integração nativa para o desenvolvimento com docker. Porem po
     ```
 Basta acessar o projeto no navegador: [http://localhost](http://localhost)
 
-## Query com informações de relevantes
+## Query com informações relevantes
 
 - Total de tags para um produto específico:
     ```sql
