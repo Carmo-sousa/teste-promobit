@@ -27,41 +27,41 @@
                             </a>
                         </div>
                     </div>
-                    <div class="flex flex-1">
+                    <div class="flex flex-1  overflow-x-auto">
                         @if (count($products) > 0)
-                        <div class="table w-full border-collapse mx-3">
-                            <div class="table-header-group">
-                              <div class="table-row text-lg text-left border border-gray-300 px-1">
-                                <div class="table-cell">ID</div>
-                                <div class="table-cell">Nome</div>
-                                <div class="table-cell">Tags</div>
-                                <div class="table-cell text-right">Ação</div>
-                              </div>
-                            </div>
-                            <div class="table-row-group min-h-min">
-                                @foreach ($products as $product)
-                                <div class="table-row">
-                                    <div class="table-cell text-left">{{ $product->id }}</div>
-                                    <div class="table-cell text-left">{{ $product->name }}</div>
-                                    <div class="table-cell text-left">
-                                        @foreach ($product->tags as $tag)
-                                            <x-tag>
-                                                {{ $tag->name }}
-                                            </x-tag>
-                                        @endforeach
-                                    </div>
-                                    <div class="table-cell my-2 py-3 text-right">
-                                        <a href="{{ route('products.edit', $product['id']) }}" class="border rounded-md my-2 p-2 text-white bg-slate-800 hover:bg-slate-900 transition ease-in-out duration-150 mx-2">
-                                            {{ __('Editar') }}
-                                        </a>
-                                        <a href="{{ route('products.delete', $product['id']) }}" class="border rounded-md my-2 p-2 text-white bg-red-600 hover:bg-red-700 transition ease-in-out duration-150">
-                                            {{ __('Excluir') }}
-                                        </a>
-                                    </div>
+                            <div class="table w-full min-w-max border-collapse mx-3">
+                                <div class="table-header-group">
+                                <div class="table-row text-lg text-left border border-gray-300 px-1">
+                                    <div class="table-cell">ID</div>
+                                    <div class="table-cell">Nome</div>
+                                    <div class="table-cell">Tags</div>
+                                    <div class="table-cell text-right">Ação</div>
                                 </div>
-                                @endforeach
+                                </div>
+                                <div class="table-row-group">
+                                    @foreach ($products as $product)
+                                    <div class="table-row">
+                                        <div class="table-cell text-left">{{ $product->id }}</div>
+                                        <div class="table-cell text-left">{{ $product->name }}</div>
+                                        <div class="table-cell text-left">
+                                            @foreach ($product->tags as $tag)
+                                                <x-tag>
+                                                    {{ $tag->name }}
+                                                </x-tag>
+                                            @endforeach
+                                        </div>
+                                        <div class="table-cell my-2 py-3 text-right">
+                                            <a href="{{ route('products.edit', $product->id) }}" class="border rounded-md my-5 p-2 text-white bg-slate-800 hover:bg-slate-900 transition ease-in-out duration-150">
+                                                {{ __('Editar') }}
+                                            </a>
+                                            <a href="{{ route('products.delete', $product->id) }}" class="border rounded-md my-5 p-2 text-white bg-red-600 hover:bg-red-700 transition ease-in-out duration-150">
+                                                {{ __('Excluir') }}
+                                            </a>
+                                        </div>
+                                    </div>
+                                    @endforeach
+                                </div>
                             </div>
-                          </div>
                         @else
                         <div class="flex flex-1">
                             <div class="flex-1">
