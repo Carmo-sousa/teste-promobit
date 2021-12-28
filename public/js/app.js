@@ -5452,6 +5452,17 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"];
 alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start();
 
+function closeToast(tag) {
+  console.log(tag);
+  tag.classList.add('hidden');
+}
+
+document.querySelectorAll('.toast').forEach(function (toast) {
+  setTimeout(function () {
+    closeToast(toast);
+  }, 5000);
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
