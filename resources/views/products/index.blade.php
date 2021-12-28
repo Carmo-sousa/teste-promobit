@@ -38,7 +38,7 @@
                                 <div class="table-cell text-right">Ação</div>
                               </div>
                             </div>
-                            <div class="table-row-group">
+                            <div class="table-row-group min-h-min">
                                 @foreach ($products as $product)
                                 <div class="table-row">
                                     <div class="table-cell text-left">{{ $product->id }}</div>
