@@ -2,6 +2,8 @@
 
 Projeto feito em laravel 8.x para o teste da Promobit.
 
+O laravel provê integração nativa para o desenvolvimento com docker. Porem por fins de aprendizado escrevi meu proprio `Dockerfile` e `docker-compose.yml`.
+
 ## Funcionalidades
 
 - [x] CRUD de produtos
